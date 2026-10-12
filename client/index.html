@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compendium d'Hyrule</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L12 22 M12 7 L18 2 M12 7 L6 2 M12 15 L18 20' stroke='%239b2d22' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="entete">
+    <a class="marque" href="#/">
+      <svg class="rune" viewBox="0 0 16 20" aria-hidden="true"><path d="M8 1v18M8 6l6-5M8 6L2 1M8 14l6 5"/></svg>
+      Compendium d'Hyrule
+    </a>
+
+    <nav class="navigation">
+      <a href="#/jeux" data-nav="/jeux">Jeux</a>
+      <a href="#/personnages" data-nav="/personnages">Gens</a>
+      <a href="#/objets" data-nav="/objets">Objets</a>
+    </nav>
+
+    <span class="sceau" id="sceau">
+      <span class="sceau-marque"></span><span id="sceau-texte">on vérifie le sceau…</span>
+    </span>
+  </header>
+
+  <main id="app" class="contenu">
+    <p class="chargement">On déplie le feuillet…</p>
+  </main>
+
+  <footer class="colophon">
+    Ce feuillet ne contient aucune donnée. Tout est copié depuis l'API au moment où vous tournez la page.
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="drolerie.js"></script>
+</body>
+</html>

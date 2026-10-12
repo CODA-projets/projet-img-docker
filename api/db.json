@@ -1,0 +1,378 @@
+{
+  "jeux": [
+    {
+      "id": 1,
+      "titre": "The Legend of Zelda",
+      "annee": 1986,
+      "console": "NES",
+      "resume": "Le premier épisode. Un monde ouvert vu de dessus, neuf donjons, et presque aucune indication : on explore, on note, on recommence."
+    },
+    {
+      "id": 2,
+      "titre": "Zelda II: The Adventure of Link",
+      "annee": 1987,
+      "console": "NES",
+      "resume": "L'épisode à part : vue de côté, combats à l'épée nerveux et points d'expérience. Longtemps mal-aimé, réévalué depuis."
+    },
+    {
+      "id": 3,
+      "titre": "A Link to the Past",
+      "annee": 1991,
+      "console": "Super NES",
+      "resume": "Deux mondes superposés que l'on fait basculer à volonté. L'épisode qui fixe la formule pour vingt ans."
+    },
+    {
+      "id": 4,
+      "titre": "Link's Awakening",
+      "annee": 1993,
+      "console": "Game Boy",
+      "resume": "Une île isolée, aucune princesse, un ton onirique et une fin qui a marqué toute une génération."
+    },
+    {
+      "id": 5,
+      "titre": "Ocarina of Time",
+      "annee": 1998,
+      "console": "Nintendo 64",
+      "resume": "Le passage à la 3D. Verrouillage de cible, voyage dans le temps, et une structure de donjons copiée pendant des années."
+    },
+    {
+      "id": 6,
+      "titre": "Majora's Mask",
+      "annee": 2000,
+      "console": "Nintendo 64",
+      "resume": "Trois jours en boucle avant la fin du monde. L'épisode le plus sombre et le plus étrange de la série."
+    },
+    {
+      "id": 7,
+      "titre": "The Wind Waker",
+      "annee": 2002,
+      "console": "GameCube",
+      "resume": "Un archipel à parcourir en voilier et un rendu en cel-shading qui a fait scandale à l'annonce, puis référence."
+    },
+    {
+      "id": 8,
+      "titre": "Twilight Princess",
+      "annee": 2006,
+      "console": "GameCube / Wii",
+      "resume": "Retour à un ton réaliste et sombre, un monde crépusculaire, et une compagne de route mémorable."
+    },
+    {
+      "id": 9,
+      "titre": "Skyward Sword",
+      "annee": 2011,
+      "console": "Wii",
+      "resume": "Des îles flottantes, des combats à la gestuelle, et le récit des origines de l'épée."
+    },
+    {
+      "id": 10,
+      "titre": "A Link Between Worlds",
+      "annee": 2013,
+      "console": "Nintendo 3DS",
+      "resume": "Suite directe de l'épisode Super NES, avec une mécanique de fusion aux murs et des donjons dans l'ordre que l'on veut."
+    },
+    {
+      "id": 11,
+      "titre": "Breath of the Wild",
+      "annee": 2017,
+      "console": "Wii U / Switch",
+      "resume": "Monde ouvert sans couloir, physique omniprésente, et la liberté d'aller droit au boss final dès la première heure."
+    },
+    {
+      "id": 12,
+      "titre": "Tears of the Kingdom",
+      "annee": 2023,
+      "console": "Switch",
+      "resume": "Même royaume, trois étages : les profondeurs, la surface et le ciel. Et un système d'assemblage d'objets qui déborde de partout."
+    }
+  ],
+  "personnages": [
+    {
+      "id": 1,
+      "nom": "Link",
+      "race": "Hylien",
+      "role": "Héros",
+      "jeuId": 1,
+      "description": "Le personnage que l'on incarne. Silencieux dans presque tous les épisodes, ce qui laisse au joueur la place de projeter ses propres réactions."
+    },
+    {
+      "id": 2,
+      "nom": "Zelda",
+      "race": "Hylienne",
+      "role": "Princesse",
+      "jeuId": 1,
+      "description": "Princesse du royaume d'Hyrule. Rarement une simple captive : selon les épisodes, stratège, savante, combattante ou souveraine en exil."
+    },
+    {
+      "id": 3,
+      "nom": "Ganondorf",
+      "race": "Gerudo",
+      "role": "Antagoniste",
+      "jeuId": 5,
+      "description": "Seul homme né chez les Gerudo par génération. Ambitieux, patient, et bien plus politique que la plupart des méchants de jeu vidéo."
+    },
+    {
+      "id": 4,
+      "nom": "Impa",
+      "race": "Sheikah",
+      "role": "Protectrice",
+      "jeuId": 1,
+      "description": "Gardienne de la famille royale. Figure de transmission : c'est souvent elle qui raconte au héros ce qu'il ignore."
+    },
+    {
+      "id": 5,
+      "nom": "Navi",
+      "race": "Fée",
+      "role": "Compagne",
+      "jeuId": 5,
+      "description": "Fée accompagnatrice chargée d'indiquer les cibles et de commenter le décor. Son appel est resté dans toutes les mémoires, pas toujours affectueusement."
+    },
+    {
+      "id": 6,
+      "nom": "Sheik",
+      "race": "Sheikah",
+      "role": "Guide",
+      "jeuId": 5,
+      "description": "Personnage énigmatique qui apparaît aux moments charnières pour enseigner des mélodies et disparaître aussitôt."
+    },
+    {
+      "id": 7,
+      "nom": "Skull Kid",
+      "race": "Skull Kid",
+      "role": "Antagoniste",
+      "jeuId": 6,
+      "description": "Enfant des bois rendu dangereux par un masque qui le dépasse. Le drame de l'épisode tient à ce qu'il n'est pas vraiment coupable."
+    },
+    {
+      "id": 8,
+      "nom": "Midona",
+      "race": "Crépuscule",
+      "role": "Compagne",
+      "jeuId": 8,
+      "description": "Compagne de route sarcastique, aux motivations troubles pendant une bonne moitié de l'aventure. Rarement égalée depuis."
+    },
+    {
+      "id": 9,
+      "nom": "Fay",
+      "race": "Esprit",
+      "role": "Compagne",
+      "jeuId": 9,
+      "description": "Esprit de l'épée, qui s'exprime en pourcentages et en probabilités. Un contraste assumé avec la chaleur des autres compagnons."
+    },
+    {
+      "id": 10,
+      "nom": "Hergo",
+      "race": "Hylien",
+      "role": "Allié",
+      "jeuId": 9,
+      "description": "Rival vantard au début, allié indispensable à la fin. L'un des rares arcs de personnage secondaires vraiment écrits de la série."
+    },
+    {
+      "id": 11,
+      "nom": "Darunia",
+      "race": "Goron",
+      "role": "Chef",
+      "jeuId": 5,
+      "description": "Patriarche des Gorons, montagne de muscles et de bonne volonté, qui scelle l'amitié par une accolade dévastatrice."
+    },
+    {
+      "id": 12,
+      "nom": "Ruto",
+      "race": "Zora",
+      "role": "Princesse",
+      "jeuId": 5,
+      "description": "Princesse Zora au caractère difficile, qui considère très tôt ses fiançailles avec le héros comme acquises."
+    },
+    {
+      "id": 13,
+      "nom": "Saria",
+      "race": "Kokiri",
+      "role": "Amie d'enfance",
+      "jeuId": 5,
+      "description": "Amie d'enfance restée au village pendant que le héros grandit. Son thème musical est l'un des plus repris de la série."
+    },
+    {
+      "id": 14,
+      "nom": "Malon",
+      "race": "Hylienne",
+      "role": "Fermière",
+      "jeuId": 5,
+      "description": "Fille du propriétaire du ranch. Sa berceuse est l'une des premières mélodies que l'on apprend."
+    },
+    {
+      "id": 15,
+      "nom": "Tingle",
+      "race": "Hylien",
+      "role": "Cartographe",
+      "jeuId": 6,
+      "description": "Homme de trente-cinq ans déguisé en fée, vendeur de cartes à prix prohibitif. Personnage le plus clivant de la franchise."
+    },
+    {
+      "id": 16,
+      "nom": "Mipha",
+      "race": "Zora",
+      "role": "Prodige",
+      "jeuId": 11,
+      "description": "Princesse Zora capable de soigner. Son histoire se raconte presque entièrement par ce qu'en disent les autres."
+    },
+    {
+      "id": 17,
+      "nom": "Daruk",
+      "race": "Goron",
+      "role": "Prodige",
+      "jeuId": 11,
+      "description": "Prodige Goron, chaleureux et increvable, qui protège ses alliés derrière une barrière."
+    },
+    {
+      "id": 18,
+      "nom": "Revali",
+      "race": "Piaf",
+      "role": "Prodige",
+      "jeuId": 11,
+      "description": "Archer Piaf imbattable et parfaitement conscient de l'être. Son orgueil cache mal une vraie rivalité avec le héros."
+    },
+    {
+      "id": 19,
+      "nom": "Urbosa",
+      "race": "Gerudo",
+      "role": "Prodige",
+      "jeuId": 11,
+      "description": "Cheffe Gerudo, maîtresse de la foudre, et l'une des rares figures adultes protectrices envers la princesse."
+    },
+    {
+      "id": 20,
+      "nom": "Agahnim",
+      "race": "Hylien",
+      "role": "Antagoniste",
+      "jeuId": 3,
+      "description": "Mage devenu conseiller du roi, puis bras armé d'une volonté qui le dépasse. Le royaume lui obéit avant de comprendre ce qu'il sert."
+    }
+  ],
+  "objets": [
+    {
+      "id": 1,
+      "nom": "Épée de Légende",
+      "type": "Arme",
+      "jeuId": 5,
+      "description": "La lame qui repousse le mal. Plantée dans son socle, elle n'accepte que celui qui est jugé digne de la retirer."
+    },
+    {
+      "id": 2,
+      "nom": "Bouclier Hylien",
+      "type": "Défense",
+      "jeuId": 5,
+      "description": "Le bouclier le plus résistant du royaume. Lourd, encombrant, et la seule chose qui tienne face à certains souffles."
+    },
+    {
+      "id": 3,
+      "nom": "Arc des Fées",
+      "type": "Arme",
+      "jeuId": 5,
+      "description": "Arc enchanté qui permet de toucher ce qui est hors de portée, et de résoudre la moitié des énigmes de donjon."
+    },
+    {
+      "id": 4,
+      "nom": "Grappin",
+      "type": "Déplacement",
+      "jeuId": 5,
+      "description": "Change radicalement la lecture d'une salle : tout point d'accroche devient un chemin."
+    },
+    {
+      "id": 5,
+      "nom": "Bombes",
+      "type": "Outil",
+      "jeuId": 1,
+      "description": "La réponse à tout mur suspect. Dans le premier épisode, il fallait les poser au hasard pour trouver les passages cachés."
+    },
+    {
+      "id": 6,
+      "nom": "Boomerang",
+      "type": "Arme",
+      "jeuId": 1,
+      "description": "Étourdit, récupère les objets hors de portée, et sert de bouton d'action à distance."
+    },
+    {
+      "id": 7,
+      "nom": "Ocarina du Temps",
+      "type": "Instrument",
+      "jeuId": 5,
+      "description": "Instrument qui transforme des mélodies en actions sur le monde : météo, téléportation, passage du jour à la nuit."
+    },
+    {
+      "id": 8,
+      "nom": "Baguette du Vent",
+      "type": "Instrument",
+      "jeuId": 7,
+      "description": "Baguette de chef d'orchestre qui commande les vents et, par extension, la direction du voilier."
+    },
+    {
+      "id": 9,
+      "nom": "Masque de Majora",
+      "type": "Masque",
+      "jeuId": 6,
+      "description": "Objet rituel d'une puissance disproportionnée, qui agit autant sur celui qui le porte que sur ce qui l'entoure."
+    },
+    {
+      "id": 10,
+      "nom": "Tunique Kokiri",
+      "type": "Vêtement",
+      "jeuId": 5,
+      "description": "Tenue verte du peuple de la forêt, devenue par accident la silhouette la plus reconnaissable du jeu vidéo."
+    },
+    {
+      "id": 11,
+      "nom": "Bottes de Plomb",
+      "type": "Vêtement",
+      "jeuId": 5,
+      "description": "Permettent de marcher au fond de l'eau. Et de ne plus pouvoir nager du tout, ce qui a coûté quelques vies."
+    },
+    {
+      "id": 12,
+      "nom": "Gant de Puissance",
+      "type": "Équipement",
+      "jeuId": 3,
+      "description": "Soulèvent ce qui ne devrait pas pouvoir l'être. Souvent la clé d'une zone entière du monde."
+    },
+    {
+      "id": 13,
+      "nom": "Lanterne",
+      "type": "Outil",
+      "jeuId": 8,
+      "description": "Éclaire les cavernes, allume les torches, et rend soudain plusieurs énigmes évidentes."
+    },
+    {
+      "id": 14,
+      "nom": "Paravoile",
+      "type": "Déplacement",
+      "jeuId": 11,
+      "description": "Transforme chaque hauteur en point de départ. L'objet qui redéfinit la façon de lire une carte."
+    },
+    {
+      "id": 15,
+      "nom": "Tablette Sheikah",
+      "type": "Outil",
+      "jeuId": 11,
+      "description": "Carte, appareil photo, et quatre pouvoirs qui manipulent la physique du monde : aimant, glace, bombes, arrêt du temps."
+    },
+    {
+      "id": 16,
+      "nom": "Plume de Roc",
+      "type": "Déplacement",
+      "jeuId": 4,
+      "description": "Donne un bond vertical là où il n'y avait pas d'appui. Un seul saut, et la moitié des salles se relisent."
+    },
+    {
+      "id": 17,
+      "nom": "Miroir Magique",
+      "type": "Outil",
+      "jeuId": 3,
+      "description": "Renvoie instantanément dans l'autre monde. Toute la structure de l'épisode repose sur cet objet."
+    },
+    {
+      "id": 18,
+      "nom": "Cape Magique",
+      "type": "Équipement",
+      "jeuId": 3,
+      "description": "Rend invisible et permet de traverser certaines barrières, au prix d'une consommation continue de magie."
+    }
+  ]
+}

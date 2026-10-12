@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  /* vélin : ocre, jamais le blanc cassé */
+  --velin:        #e9ddbf;
+  --velin-clair:  #f1e7cd;
+  --velin-ombre:  #d3bf96;
+  --velin-tache:  #c9b188;
+
+  /* encre ferro-gallique : brun-noir, pas gris */
+  --encre:        #2b2017;
+  --encre-pale:   #6d5c46;
+  --encre-fantome:#9c8a6e;
+
+  /* rubrique : vermillon des enlumineurs */
+  --rubrique:     #9b2d22;
+  --rubrique-pale:#c25a44;
+
+  /* vert-de-gris et feuille d'or, un usage chacun */
+  --vertdegris:   #4b6a57;
+  --or:           #a8812f;
+
+  --reglure:      #c3ab7f;
+
+  --serif: "EB Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  color: var(--encre);
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.62;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--velin);
+  position: relative;
+}
+
+/* vélin : le grain fin par-dessus tout, les taches en dessous.
+   Deux calques fixés en position, donc aucun raccord sur les longues pages. */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* taches d'insolation et bords roussis */
+body::before {
+  z-index: -2;
+  background:
+    radial-gradient(1100px 700px at 78% 4%,  rgba(186,160,116,.50), transparent 64%),
+    radial-gradient(900px 620px at 8% 96%,   rgba(186,160,116,.44), transparent 62%),
+    radial-gradient(520px 380px at 46% 38%,  rgba(246,238,216,.72), transparent 72%),
+    linear-gradient(180deg, rgba(160,134,92,.16) 0%, transparent 14%, transparent 86%, rgba(160,134,92,.18) 100%);
+}
+
+/* grain de peau : fin, dense, visible */
+body::after {
+  z-index: -1;
+  opacity: .5;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23g)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='340'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.016' numOctaves='3' seed='7'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='340' height='340' filter='url(%23t)' opacity='.5'/%3E%3C/svg%3E");
+  background-size: 120px 120px, 340px 340px;
+  mix-blend-mode: multiply;
+}
+
+/* ============ marques gravées ============ */
+
+.rune { width: 15px; height: 19px; flex: none; vertical-align: -2px; }
+.rune path { stroke: currentColor; stroke-width: 1.6; fill: none; stroke-linecap: square; }
+
+/* ============ en-tête ============ */
+
+.entete {
+  display: flex;
+  align-items: baseline;
+  gap: 28px;
+  flex-wrap: wrap;
+  padding: 26px 40px 14px;
+  border-bottom: 1px solid var(--reglure);
+  box-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+.marque {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 11px;
+  text-decoration: none;
+  color: var(--encre);
+  font-size: 21px;
+  font-variant: small-caps;
+  letter-spacing: .13em;
+}
+.marque .rune { color: var(--rubrique); align-self: center; }
+
+.navigation { display: flex; gap: 26px; margin-left: auto; }
+
+.navigation a {
+  color: var(--encre-pale);
+  text-decoration: none;
+  font-variant: small-caps;
+  letter-spacing: .09em;
+  font-size: 18px;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid transparent;
+}
+.navigation a:hover { color: var(--encre); }
+.navigation a.actif { color: var(--rubrique); border-bottom-color: var(--rubrique); }
+
+/* sceau d'état : plein quand l'API répond, évidé et fendu sinon */
+.sceau { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; color: var(--encre-fantome); font-style: italic; }
+.sceau-marque { width: 13px; height: 13px; border-radius: 50%; border: 1.5px solid currentColor; }
+.sceau.ok  { color: var(--vertdegris); }
+.sceau.ok  .sceau-marque { background: var(--vertdegris); border-color: var(--vertdegris); }
+.sceau.ko  { color: var(--rubrique); }
+.sceau.ko  .sceau-marque { background: repeating-linear-gradient(135deg, var(--rubrique) 0 2px, transparent 2px 4px); }
+
+/* ============ page ============ */
+
+.contenu { flex: 1; width: 100%; max-width: 920px; margin: 0 auto; padding: 44px 40px 72px; }
+
+.titre-page { margin: 0 0 2px; font-size: 40px; font-weight: 500; letter-spacing: .01em; line-height: 1.12; }
+.exergue { margin: 0 0 38px; color: var(--encre-pale); font-style: italic; font-size: 19px; }
+
+.chargement { color: var(--encre-fantome); font-style: italic; padding: 56px 0; }
+
+/* ============ registre ============ */
+
+/* la marge déborde à gauche de la colonne de texte, comme sur un codex */
+.registre { border-top: 1px solid var(--reglure); margin-left: -116px; }
+
+.entree {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 0 24px;
+  padding: 13px 8px 15px 0;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--reglure);
+}
+.entree:hover { background: rgba(246,238,216,.62); }
+.entree:hover .entree-nom { color: var(--rubrique); }
+.entree:focus-visible { outline: 2px solid var(--rubrique); outline-offset: -2px; }
+
+.marge {
+  text-align: right;
+  color: var(--encre-pale);
+  font-size: 16px;
+  font-variant-numeric: oldstyle-nums;
+  padding-top: 7px;
+}
+
+.entree-corps { min-width: 0; }
+
+.entree-nom {
+  display: flex;
+  align-items: baseline;
+  gap: 11px;
+  font-size: 23px;
+  line-height: 1.3;
+}
+.entree-nom .rune { color: var(--or); align-self: center; }
+
+.entree-nom em {
+  font-size: 16.5px;
+  color: var(--encre-fantome);
+  font-style: italic;
+  letter-spacing: .01em;
+}
+
+.entree-glose { margin: 3px 0 0; color: var(--encre-pale); max-width: 58ch; line-height: 1.5; }
+
+/* ============ dénombrement (accueil) ============ */
+
+.denombrement { display: flex; gap: 44px; flex-wrap: wrap; margin: 0 0 42px; padding-bottom: 32px; border-bottom: 1px solid var(--reglure); }
+.denombrement div b {
+  display: block;
+  font-size: 54px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--rubrique);
+  font-variant-numeric: oldstyle-nums;
+}
+.denombrement div span { color: var(--encre-pale); font-variant: small-caps; letter-spacing: .1em; font-size: 17px; }
+
+/* ============ filtres ============ */
+
+.filtres { display: flex; gap: 7px 18px; flex-wrap: wrap; margin: 0 0 26px; }
+.filtres button {
+  font: inherit;
+  font-size: 17.5px;
+  font-variant: small-caps;
+  letter-spacing: .05em;
+  background: none;
+  border: 0;
+  border-bottom: 1.5px solid transparent;
+  padding: 0 0 2px;
+  color: var(--encre-pale);
+  cursor: pointer;
+}
+.filtres button:hover { color: var(--encre); }
+.filtres button.actif { color: var(--rubrique); border-bottom-color: var(--rubrique); }
+
+/* ============ feuillet (fiche) ============ */
+
+.retour { display: inline-block; color: var(--encre-pale); text-decoration: none; font-style: italic; margin-bottom: 26px; }
+.retour:hover { color: var(--rubrique); }
+
+.feuillet { border-top: 2px solid var(--encre); padding: 28px 0 10px; }
+
+.rubrique {
+  margin: 0 0 6px;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.12;
+  color: var(--rubrique);
+}
+
+.marginalia {
+  margin: 0 0 30px;
+  color: var(--encre-pale);
+  font-style: italic;
+  font-size: 18px;
+}
+
+.corps { max-width: 56ch; font-size: 21px; line-height: 1.68; margin: 0; }
+
+/* lettrine : l'unique élément doré de la page */
+.corps::first-letter {
+  float: left;
+  font-size: 61px;
+  line-height: .82;
+  padding: 7px 11px 0 0;
+  color: var(--or);
+  font-weight: 500;
+}
+
+.intertitre {
+  margin: 46px 0 14px;
+  font-size: 20px;
+  font-variant: small-caps;
+  letter-spacing: .11em;
+  font-weight: 500;
+  color: var(--encre-pale);
+  border-bottom: 1px solid var(--reglure);
+  padding-bottom: 5px;
+}
+
+/* ============ avis d'erreur ============ */
+
+.avis { border: 1.5px solid var(--rubrique); padding: 28px 32px; background: rgba(241,231,205,.55); }
+.avis h2 { margin: 0 0 14px; font-size: 27px; font-weight: 500; color: var(--rubrique); }
+.avis p { max-width: 64ch; }
+.avis ol { max-width: 64ch; padding-left: 22px; }
+.avis li { margin: 11px 0; }
+.avis li::marker { color: var(--rubrique); }
+.avis code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .82em; background: rgba(169,146,106,.26); padding: 1px 5px; }
+.avis pre {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  background: rgba(43,32,23,.06);
+  border-left: 3px solid var(--rubrique);
+  padding: 11px 14px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+.avis .post-scriptum { font-style: italic; color: var(--encre-pale); margin-bottom: 0; }
+
+/* ============ colophon ============ */
+
+.colophon {
+  border-top: 1px solid var(--reglure);
+  padding: 18px 40px 26px;
+  text-align: center;
+  color: var(--encre-fantome);
+  font-style: italic;
+  font-size: 16px;
+}
+
+/* ============ entrée en page, une seule fois ============ */
+
+@keyframes poser { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+.contenu > * { animation: poser .42s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .contenu > * { animation: none; }
+}
+
+/* ============ petits écrans ============ */
+
+@media (max-width: 680px) {
+  body { font-size: 18px; }
+  .entete { padding: 20px 20px 12px; gap: 14px; }
+  .navigation { margin-left: 0; width: 100%; gap: 18px; }
+  .contenu { padding: 30px 20px 54px; }
+  .titre-page { font-size: 31px; }
+  .rubrique { font-size: 30px; }
+  .registre { margin-left: 0; }
+  .entree { grid-template-columns: 1fr; gap: 2px; }
+  .marge { text-align: left; order: 2; padding-top: 4px; }
+  .denombrement { gap: 28px; }
+  .denombrement div b { font-size: 42px; }
+  .colophon { padding: 16px 20px 22px; }
+}
+
+/* ============ drôlerie marginale ============ */
+
+.drolerie {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  background: rgba(24, 18, 11, .72);
+  padding: 20px;
+}
+
+.drolerie-cadre {
+  background: var(--velin-clair);
+  border: 2px solid var(--encre);
+  box-shadow: 0 18px 60px rgba(24,18,11,.5);
+  padding: 18px 20px 14px;
+  max-width: 100%;
+}
+
+.drolerie-titre {
+  margin: 0 0 12px;
+  font-variant: small-caps;
+  letter-spacing: .13em;
+  font-size: 19px;
+  color: var(--rubrique);
+}
+
+.drolerie canvas {
+  display: block;
+  image-rendering: pixelated;
+  width: 608px;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--reglure);
+  background: var(--velin);
+}
+
+.drolerie-pied {
+  margin: 12px 0 0;
+  font-size: 14.5px;
+  font-style: italic;
+  color: var(--encre-pale);
+  text-align: center;
+}
